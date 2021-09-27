@@ -3,7 +3,7 @@
 
 <div class="select-main">
     <div class="select-display">
-        <input type="text" class="form-control" @bind-value="_selectedItemText" readonly @onclick="OnClickSpan"/>
+        <input type="text" class="form-control" @bind-value="_selectedItemText" readonly @onclick="OnClickSpan" placeholder="Select an option"/>
         <span class="select-button @(_showContainerOptions ? "open" : "")" @onclick="OnClickSpan"></span>
     </div>
     @if (_showContainerOptions)

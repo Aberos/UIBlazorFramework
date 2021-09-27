@@ -4,7 +4,7 @@
     {
         private bool _showContainerOptions;
 
-        private string _selectedItemText = "Teste";
+        private string _selectedItemText;
 
         private string _searchText;
 
