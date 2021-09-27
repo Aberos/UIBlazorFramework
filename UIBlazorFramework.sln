@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIBlazorFramework.Web.Client", "UIBlazorFramework.Web.Client\UIBlazorFramework.Web.Client.csproj", "{3945B2FA-9737-4AF4-AC5C-823CD28CE84D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIBlazorFramework.Web.Client", "UIBlazorFramework.Web.Client\UIBlazorFramework.Web.Client.csproj", "{3945B2FA-9737-4AF4-AC5C-823CD28CE84D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIBlazorFramework.Web", "UIBlazorFramework.Web\UIBlazorFramework.Web.csproj", "{DDC85A06-507D-4DBD-8BA3-D9E9198F73C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIBlazorFramework.Web", "UIBlazorFramework.Web\UIBlazorFramework.Web.csproj", "{DDC85A06-507D-4DBD-8BA3-D9E9198F73C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIBlazorFramework.Model", "UIBlazorFramework.Model\UIBlazorFramework.Model.csproj", "{4363D145-0FF7-49B3-889D-58F256A649B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DDC85A06-507D-4DBD-8BA3-D9E9198F73C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDC85A06-507D-4DBD-8BA3-D9E9198F73C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDC85A06-507D-4DBD-8BA3-D9E9198F73C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4363D145-0FF7-49B3-889D-58F256A649B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4363D145-0FF7-49B3-889D-58F256A649B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4363D145-0FF7-49B3-889D-58F256A649B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4363D145-0FF7-49B3-889D-58F256A649B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

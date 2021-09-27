@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UIBlazorFramework.Model\UIBlazorFramework.Model.csproj" />
     <ProjectReference Include="..\UIBlazorFramework.Web\UIBlazorFramework.Web.csproj" />
   </ItemGroup>
 

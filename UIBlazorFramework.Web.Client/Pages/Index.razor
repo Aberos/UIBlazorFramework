@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using UIBlazorFramework.Web.Components
+@using UIBlazorFramework.Model.Entities 
 
 <div class="row">
     <div class="col-12">
@@ -14,7 +15,13 @@
 
             <div class="col-12 form-group">
                 <label><strong>Simple Select</strong></label>
-                <UISelect></UISelect>
+                <UISelect TData="OptionItem" 
+                          Data="SelectData" 
+                          ValueField="(x=> x.Value)" 
+                          TextField="(x=> x.Text)"
+                          @bind-SeletedItem="SelectedItem">
+                </UISelect>
+                <span class="mt-1">@SelectedItem?.Value - @SelectedItem?.Text</span>
             </div>
             <div class="col-12 form-group">
                 <label>Teste</label>
