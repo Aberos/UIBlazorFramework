@@ -1,0 +1,21 @@
+﻿@inherits ComponentBase
+@using Microsoft.AspNetCore.Components.Web
+
+<div class="select-main">
+    <div class="select-display">
+        <input type="text" class="form-control" @bind-value="_selectedItemText" readonly @onclick="OnClickSpan"/>
+        <span class="select-button @(_showContainerOptions ? "open" : "")" @onclick="OnClickSpan"></span>
+    </div>
+    @if (_showContainerOptions)
+    {
+        <div class="select-container p-1">
+            <input type="text" class="select-search form-control w-100 mb-1" @bind-value="_searchText" @bind-value:event="oninput"/>
+            <ul class="select-container-options">
+                @for (var i = 0; i < 20; i++)
+                {
+                    <li class="select-option">option @i</li>
+                }
+            </ul>
+        </div>
+    }
+</div>
