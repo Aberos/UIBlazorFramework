@@ -5,26 +5,20 @@
 <div class="select-main">
     <div class="select-display">
         <input type="text" class="form-control" @bind-value="_selectedItemText" readonly @onclick="BindContainerOptions" placeholder="Select an option" />
+        @if (SelectedItem != null) 
+        { 
+            <span class="clear-button" @onclick="ClearSelected">x</span>
+        }
         <span class="select-button @(_showContainerOptions ? "open" : "")" @onclick="BindContainerOptions"></span>
     </div>
     @if (_showContainerOptions)
     {
-        <div class="select-container p-1">
-            <input type="text" class="select-search form-control w-100 mb-1" @bind-value="_searchText" @bind-value:event="oninput" />
+        <div class="select-container p-1" style="height: @_heigthContainer">
+            <input type="text" class="select-search form-control w-100 mb-1" @oninput="OnFilter" />
             <ul class="select-container-options">
-                @foreach (var item in Data)
+                @foreach (var item in _filterData)
                 {
-                    @if (!string.IsNullOrWhiteSpace(_searchText))
-                    {
-                        @if (GetText(item).Contains(_searchText))
-                        {
-                            <li class="select-option" @onclick="(()=> SelectItem(item))">@GetText(item)</li>
-                        }
-                    }
-                    else
-                    {
-                        <li class="select-option" @onclick="(()=> SelectItem(item))">@GetText(item)</li>
-                    }
+                    <li class="select-option" @onclick="(()=> SelectItem(item))">@GetText(item)</li>
                 }
             </ul>
         </div>

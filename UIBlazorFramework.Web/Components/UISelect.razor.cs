@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace UIBlazorFramework.Web.Components
@@ -11,10 +12,10 @@ namespace UIBlazorFramework.Web.Components
         public IList<TData> Data { get; set; }
 
         [Parameter]
-        public TData SeletedItem { get; set; }
+        public TData SelectedItem { get; set; }
 
         [Parameter]
-        public EventCallback<TData> SeletedItemChanged { get; set; }
+        public EventCallback<TData> SelectedItemChanged { get; set; }
 
         [Parameter]
         public string Value { get; set; }
@@ -33,6 +34,16 @@ namespace UIBlazorFramework.Web.Components
         private string _selectedItemText;
 
         private string _searchText;
+
+        private IList<TData> _filterData;
+
+        private string _heigthContainer;
+
+        protected override void OnInitialized()
+        {
+            _filterData = Data;
+            base.OnInitialized();
+        }
 
         private string GetText(TData item)
         {
@@ -59,12 +70,34 @@ namespace UIBlazorFramework.Web.Components
         private void BindContainerOptions()
         {
             _showContainerOptions = !_showContainerOptions;
+            CalcHeightContainer();
+        }
+
+        private void OnFilter(ChangeEventArgs args)
+        {
+            _searchText = args.Value.ToString();
+            if (!string.IsNullOrWhiteSpace(_searchText))
+                _filterData = Data.Where(x => GetText(x).Contains(_searchText)).ToList();
+            else
+                _filterData = Data;
+
+            CalcHeightContainer();
+        }
+
+        private void ClearSelected()
+        {
+            SelectedItem = default;
+            SelectedItemChanged.InvokeAsync(default);
+            _selectedItemText = null;
+
+            Value = default;
+            ValueChanged.InvokeAsync(default);
         }
 
         private void SelectItem(TData item)
         {
-            SeletedItem = item;
-            SeletedItemChanged.InvokeAsync(item);
+            SelectedItem = item;
+            SelectedItemChanged.InvokeAsync(item);
 
             _selectedItemText = GetText(item);
 
@@ -73,6 +106,13 @@ namespace UIBlazorFramework.Web.Components
             ValueChanged.InvokeAsync(value);
             _showContainerOptions = false;
             _searchText = string.Empty;
+            _filterData = Data;
+        }
+
+        private void CalcHeightContainer()
+        {
+            var height = (_filterData.Count * 38) + 50;
+            _heigthContainer = height < 300 ? height + "px" : "300px";
         }
     }
 }
