@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIBlazorFramework.Web.Clien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIBlazorFramework.Web", "UIBlazorFramework.Web\UIBlazorFramework.Web.csproj", "{DDC85A06-507D-4DBD-8BA3-D9E9198F73C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIBlazorFramework.Model", "UIBlazorFramework.Model\UIBlazorFramework.Model.csproj", "{4363D145-0FF7-49B3-889D-58F256A649B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIBlazorFramework.Model", "UIBlazorFramework.Model\UIBlazorFramework.Model.csproj", "{4363D145-0FF7-49B3-889D-58F256A649B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

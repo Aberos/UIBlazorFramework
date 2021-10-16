@@ -75,3 +75,35 @@
     background-color: #5897fb;
     color: white;
 }
+
+.calendar {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    /*border: 1px solid #ced4da;*/
+}
+
+.calendar thead th {
+    vertical-align: bottom;
+}
+
+.calendar thead {
+    background-color: #4a81d4;
+    color: white;
+}
+
+.calendar .td,
+.calendar .th{
+    padding: .75rem;
+    vertical-align: top;
+}
+
+.calendar tbody td.date {
+    cursor: pointer;
+}
+
+.calendar .next,
+.calendar .prev{
+    cursor: pointer;
+}
